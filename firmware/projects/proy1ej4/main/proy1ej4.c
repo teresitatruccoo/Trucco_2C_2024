@@ -2,15 +2,26 @@
  *
  * @section genDesc Se realizan los ejercicios 4 5 y 6 del Proyecto 1 en este mismo proyecto.
  *
- * This section describes how the program works.
+ * En este programa se implementa una función para mostrar un valor de 32 bits en un display LCD utilizando 
+ * GPIOs configurados previamente. Para esto se reutilizan ademas funciones creadas en los puntos 4 y 5 del proyecto general. 
+ * La funcion del punto 4 recibe un dato de 32 bits y lo convierte a BCD.
+ * La funcion del punto 5 recibe como parametro un digito BCD utilizado para cambiar de estado GPIOs
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
  * @section hardConn Hardware Connection
  *
- * |    Peripheral  |   ESP32   	|
- * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * |   DISPLAY  |   EDU-ESP		|
+ * |:----------:|:-------------:|
+ * | 	D1		| 	GPIO_20		|
+ * | 	D2		| 	GPIO_21		|
+ * | 	D3		| 	GPIO_22		|
+ * | 	D4		| 	GPIO_23		|
+ * | 	SEL_1	| 	GPIO_19		|
+ * | 	SEL_2	| 	GPIO_18		|
+ * | 	SEL_3	| 	GPIO_9		|
+ * | 	VCC     |	+5V     	|
+ * | 	GND 	| 	GND     	|
  *
  *
  * @section changelog Changelog
@@ -44,6 +55,16 @@ typedef struct
 
 
 /*==================[internal functions declaration]=========================*/
+/**
+ * @brief Convierte un número entero de 32 bits en un arreglo de dígitos BCD.
+ *
+ * La función descompone un dato de 32 bits en sus dígitos individuales, almacenándolos en un arreglo BCD. 
+ *
+ * @param data El dato de 32 bits que se desea convertir en BCD.
+ * @param digits La cantidad de dígitos que se espera obtener.
+ * @param bcd_number Arreglo donde se almacenarán los dígitos en formato BCD.
+ *
+ */
 uint8_t convertToBcdArray(uint32_t data, uint8_t digits, uint8_t *bcd_number)
 {
 	for (uint8_t i = 0; i < digits; i++)
@@ -60,7 +81,14 @@ uint8_t convertToBcdArray(uint32_t data, uint8_t digits, uint8_t *bcd_number)
 	}
 	return 0;
 }
-
+/**
+ * @brief Convierte un número decimal de un dígito en su equivalente BCD.
+ *
+ * La función toma un número decimal y lo convierte a BCD, almacenando cada bit en un arreglo.
+ *
+ * @param decimal El valor decimal a convertir.
+ * @param numBCD Arreglo donde se almacenarán los bits en formato BCD.
+ */
 void decimalToBCD(uint8_t decimal, uint8_t *numBCD)
 {
 	for (uint8_t i = 0; i < 4; i++)
@@ -69,6 +97,15 @@ void decimalToBCD(uint8_t decimal, uint8_t *numBCD)
 		decimal /= 2; 
 	}
 }
+/**
+ * @brief Mapea los bits BCD a los pines GPIO correspondientes.
+ *
+ * La función recibe un arreglo de bits en formato BCD y activa o desactiva los pines GPIO 
+ * configurados en el arreglo de estructuras gpioConf_t según los bits del BCD.
+ *
+ * @param numBCD Arreglo de bits BCD que representa un dígito decimal en binario.
+ * @param arregloGPIOS Arreglo de estructuras gpioConf_t que define los pines GPIO a controlar.
+ */
 void mapeoGPIO(uint8_t *numBCD, gpioConf_t *arregloGPIOS)
 {
 	for (uint8_t j = 0; j < 4; j++)
@@ -83,7 +120,17 @@ void mapeoGPIO(uint8_t *numBCD, gpioConf_t *arregloGPIOS)
 		}
 	}
 }
-
+/**
+ * @brief Muestra un número en el display utilizando pines GPIO mapeados.
+ *
+ * La función toma un número de 32 bits, lo convierte en dígitos BCD y luego 
+ * mapea esos dígitos a un display utilizando los pines GPIO correspondientes 
+ *
+ * @param data El número de 32 bits que se desea mostrar en el display.
+ * @param digits La cantidad de dígitos a mostrar en el display.
+ * @param bcd_pins Arreglo de estructuras gpioConf_t.
+ * @param digit_pins Arreglo de estructuras gpioConf_t.
+ */
 void mostrarNumeroEnDisplay(uint32_t data, uint8_t digits, gpioConf_t *bcd_pins, gpioConf_t *digit_pins) 
 {
 	uint8_t bcd_array[digits]; //Almacena digitos BCD
