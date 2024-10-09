@@ -37,7 +37,13 @@
 #include "lcditse0803.h"
 
 /*==================[macros and definitions]=================================*/
+/** @def CONFIG_BLINK_PERIOD_TECLAS
+ * @brief Periodo de interrupcion de teclas
+ */
 #define CONFIG_BLINK_PERIOD_TECLAS 200	  // Intervarlo entre lectura de teclas
+/** @def CONFIG_BLINK_PERIOD_MEDICION
+ * @brief Periodo de actualizacion de la medicion
+ */
 #define CONFIG_BLINK_PERIOD_MEDICION 1000 // Intervalo de actualizacion de la medicion del sensor
 
 /*==================[internal data definition]===============================*/

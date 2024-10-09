@@ -57,16 +57,15 @@ TaskHandle_t mostrar_task_handle = NULL;
 
 /*==================[internal functions declaration]=========================*/
 void FuncTimerA(void *param){
-    vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);  
+    vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);  //Notificara tareas
 	vTaskNotifyGiveFromISR(mostrar_task_handle, pdFALSE);   
  
 }
 
+
 /**
- * @brief Tarea encargada de controlar los LEDs segun el valor de valor_medicion
- *
- * La tarea espera en este punto hasta recibir una notificacion. Luego, dependiendo del valor de valor_medicion
- * enciende o apaga los LEDs. Si valor_medicion es menor a 10 cm, los LEDs estan apagados. Si es mayor a 10 y menor a 20 cm, solo el LED_1 esta encendido.
+ * @brief Controla los LEDs segun el valor de valor_medicion
+ * Si valor_medicion es menor a 10 cm, los LEDs estan apagados. Si es mayor a 10 y menor a 20 cm, solo el LED_1 esta encendido.
  * Si es mayor a 20 y menor a 30 cm, los LEDs LED_1 y LED_2 estan encendidos. Si es mayor a 30 cm, los tres LEDs estan encendidos.
  */
 void Controlar_Leds(void)
@@ -132,16 +131,13 @@ static void medicion(void *pvParameter)
 	}
 }
 
+
 /**
  * @brief Muestra la lectura de distancia en los LEDS y en el display.
  *
  * Si medir es true y hold es true, no actualiza el LCD, pero sí los LEDs. Si no está en hold, muestra el valor de valor_medicion en el LCD y ajusta los LEDs.
  * Si medir es false, apaga el LCD y los LEDs.
- * Espera 1000 ms antes de volver a actualizar, alineado con la medición.
  *
- * @param 
- * @param 
- * @param 
  *
  */
 static void mostrar(void *pvParameter)

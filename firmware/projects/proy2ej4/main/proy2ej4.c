@@ -397,4 +397,4 @@ void app_main(void)
 }
 /*==================[end of file]============================================*/
 //Consutas: debo conectar la salida del DAC a CH1 para ver en el serial oscilloscope? y el potenciometro? 
-//CH1-2-3 solo aptos, CH0 pero para CAD
+//CH1-2-3 solo aptos entrada, CH0 pero para CAD
