@@ -1,0 +1,698 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examen-Ciclistas: Referencia del archivo C:/Repositorios/Trucco_2C_2024/firmware/projects/examen/main/examen.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Examen-Ciclistas<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('examen_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo examen.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pwm__mcu_8h_source.html">pwm_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+</div>
+<p><a href="examen_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a72d356824e3c4922e02847cdb33aaa26" id="r_a72d356824e3c4922e02847cdb33aaa26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72d356824e3c4922e02847cdb33aaa26">CONFIG_PERIODO_MEDICION</a>&#160;&#160;&#160;500000</td></tr>
+<tr class="memdesc:a72d356824e3c4922e02847cdb33aaa26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodo asociado a la frecuencia de medicion de distancia.  <br /></td></tr>
+<tr class="separator:a72d356824e3c4922e02847cdb33aaa26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04af45a437b91e28e16acbbca6918951" id="r_a04af45a437b91e28e16acbbca6918951"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04af45a437b91e28e16acbbca6918951">CONFIG_PERIODO_BUZZER_PRECAUCION</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="memdesc:a04af45a437b91e28e16acbbca6918951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodo asociado a la frecuencia de sonido del buzzer de precacuion.  <br /></td></tr>
+<tr class="separator:a04af45a437b91e28e16acbbca6918951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768631a364805bd30b4727cc9a3b8fd9" id="r_a768631a364805bd30b4727cc9a3b8fd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a768631a364805bd30b4727cc9a3b8fd9">CONFIG_PERIODO_BUZZER_PELIGRO</a>&#160;&#160;&#160;500000</td></tr>
+<tr class="memdesc:a768631a364805bd30b4727cc9a3b8fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodo asociado a la frecuencia de sonido del buzzer de precacuion.  <br /></td></tr>
+<tr class="separator:a768631a364805bd30b4727cc9a3b8fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e0f933530339545345b34cdf9e3437" id="r_ac8e0f933530339545345b34cdf9e3437"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8e0f933530339545345b34cdf9e3437">CONFIG_PERIODO_ACELEROMETRO</a>&#160;&#160;&#160;10000</td></tr>
+<tr class="memdesc:ac8e0f933530339545345b34cdf9e3437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodo asociado a la frecuencia de medicion deL acelerometro.  <br /></td></tr>
+<tr class="separator:ac8e0f933530339545345b34cdf9e3437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:afaccfed84cd1498a05ea04a65f1209b1" id="r_afaccfed84cd1498a05ea04a65f1209b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a> (void *param)</td></tr>
+<tr class="memdesc:afaccfed84cd1498a05ea04a65f1209b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función invocada en la interrupción del timer A.  <br /></td></tr>
+<tr class="separator:afaccfed84cd1498a05ea04a65f1209b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5088c3325764095ca222dc78c328f466" id="r_a5088c3325764095ca222dc78c328f466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5088c3325764095ca222dc78c328f466">FuncTimerB</a> (void *param)</td></tr>
+<tr class="memdesc:a5088c3325764095ca222dc78c328f466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función invocada en la interrupción del timer B.  <br /></td></tr>
+<tr class="separator:a5088c3325764095ca222dc78c328f466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d06a43d996ecce9ab84fa3a837fa597" id="r_a2d06a43d996ecce9ab84fa3a837fa597"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d06a43d996ecce9ab84fa3a837fa597">FuncTimerC</a> (void *param)</td></tr>
+<tr class="memdesc:a2d06a43d996ecce9ab84fa3a837fa597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función invocada en la interrupción del timer C.  <br /></td></tr>
+<tr class="separator:a2d06a43d996ecce9ab84fa3a837fa597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fabf43ff16d8b11b1833a572594222" id="r_ae5fabf43ff16d8b11b1833a572594222"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5fabf43ff16d8b11b1833a572594222">Controlar_Leds</a> (void)</td></tr>
+<tr class="memdesc:ae5fabf43ff16d8b11b1833a572594222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controla los LEDs segun el valor de la medicion de distancia.  <br /></td></tr>
+<tr class="separator:ae5fabf43ff16d8b11b1833a572594222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd265f1f7c37adf2d1a9ba47a7d96e3a" id="r_abd265f1f7c37adf2d1a9ba47a7d96e3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd265f1f7c37adf2d1a9ba47a7d96e3a">mediciondistancia_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:abd265f1f7c37adf2d1a9ba47a7d96e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que mide la distancia con el sensor ultrasónico HC-SR04 y actualiza los LEDS.  <br /></td></tr>
+<tr class="separator:abd265f1f7c37adf2d1a9ba47a7d96e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d3eab6d2ee332b0d4d2851a6fe09b8" id="r_a05d3eab6d2ee332b0d4d2851a6fe09b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05d3eab6d2ee332b0d4d2851a6fe09b8">alarmapeligro_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a05d3eab6d2ee332b0d4d2851a6fe09b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que enciende un buzzer para indicar un peligro.  <br /></td></tr>
+<tr class="separator:a05d3eab6d2ee332b0d4d2851a6fe09b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51346c0a8a4eb0c9baaaed3655d3558" id="r_ae51346c0a8a4eb0c9baaaed3655d3558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae51346c0a8a4eb0c9baaaed3655d3558">alarmaprecaucion_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:ae51346c0a8a4eb0c9baaaed3655d3558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que enciende un buzzer para indicar precaucion.  <br /></td></tr>
+<tr class="separator:ae51346c0a8a4eb0c9baaaed3655d3558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ff1579458aaacda2d08449d0f21cc8" id="r_a40ff1579458aaacda2d08449d0f21cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40ff1579458aaacda2d08449d0f21cc8">medicion_caida_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a40ff1579458aaacda2d08449d0f21cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que mide la aceleracion con el acelerometro y envia mensajes por bt.  <br /></td></tr>
+<tr class="separator:a40ff1579458aaacda2d08449d0f21cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2a590c771f353f0f6890b6e3cfee2603" id="r_a2a590c771f353f0f6890b6e3cfee2603"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a590c771f353f0f6890b6e3cfee2603">valor_medicion</a> = 0</td></tr>
+<tr class="memdesc:a2a590c771f353f0f6890b6e3cfee2603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable para almacenar los valores de la señal de distancia.  <br /></td></tr>
+<tr class="separator:a2a590c771f353f0f6890b6e3cfee2603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c764197f446287cdb87dc768046d475" id="r_a7c764197f446287cdb87dc768046d475"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c764197f446287cdb87dc768046d475">signalACELEROMETRO_X</a> =0</td></tr>
+<tr class="memdesc:a7c764197f446287cdb87dc768046d475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable para almacenar los valores de la señal del acelerometro en X.  <br /></td></tr>
+<tr class="separator:a7c764197f446287cdb87dc768046d475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852453f831f697f4dbeee6954e132a66" id="r_a852453f831f697f4dbeee6954e132a66"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a852453f831f697f4dbeee6954e132a66">signalACELEROMETRO_Y</a> =0</td></tr>
+<tr class="memdesc:a852453f831f697f4dbeee6954e132a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable para almacenar los valores de la señal de acelerometro en Y.  <br /></td></tr>
+<tr class="separator:a852453f831f697f4dbeee6954e132a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8b4aa98ef0fd467e82831f670161c8" id="r_a2f8b4aa98ef0fd467e82831f670161c8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8b4aa98ef0fd467e82831f670161c8">signalACELEROMETRO_Z</a> =0</td></tr>
+<tr class="memdesc:a2f8b4aa98ef0fd467e82831f670161c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable para almacenar los valores de la señal del acelerometro en Z.  <br /></td></tr>
+<tr class="separator:a2f8b4aa98ef0fd467e82831f670161c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0cb40d7a31ce7e8b3f906fd55df312" id="r_a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elemento de tipo TaskHandle para manejar la tarea de medir distancia.  <br /></td></tr>
+<tr class="separator:a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82725be8fd81729be466f3a7e04fee23" id="r_a82725be8fd81729be466f3a7e04fee23"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82725be8fd81729be466f3a7e04fee23">buzzerprecaucion_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a82725be8fd81729be466f3a7e04fee23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elemento de tipo TaskHandle para manejar la tarea de encender el buzzer de precaucion.  <br /></td></tr>
+<tr class="separator:a82725be8fd81729be466f3a7e04fee23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac44253768bb2c4965e7105e02a80e50" id="r_aac44253768bb2c4965e7105e02a80e50"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac44253768bb2c4965e7105e02a80e50">buzzerpeligro_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:aac44253768bb2c4965e7105e02a80e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elemento de tipo TaskHandle para manejar la tarea de encender el buzzer de peligro.  <br /></td></tr>
+<tr class="separator:aac44253768bb2c4965e7105e02a80e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3466cd0e43837d57ca5c523cb468f0f2" id="r_a3466cd0e43837d57ca5c523cb468f0f2"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3466cd0e43837d57ca5c523cb468f0f2">acelerometro_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a3466cd0e43837d57ca5c523cb468f0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elemento de tipo TaskHandle para manejar la tarea de medir señal del acelerometro.  <br /></td></tr>
+<tr class="separator:a3466cd0e43837d57ca5c523cb468f0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="ac8e0f933530339545345b34cdf9e3437" name="ac8e0f933530339545345b34cdf9e3437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e0f933530339545345b34cdf9e3437">&#9670;&#160;</a></span>CONFIG_PERIODO_ACELEROMETRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIODO_ACELEROMETRO&#160;&#160;&#160;10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Periodo asociado a la frecuencia de medicion deL acelerometro. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00081">81</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a768631a364805bd30b4727cc9a3b8fd9" name="a768631a364805bd30b4727cc9a3b8fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768631a364805bd30b4727cc9a3b8fd9">&#9670;&#160;</a></span>CONFIG_PERIODO_BUZZER_PELIGRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIODO_BUZZER_PELIGRO&#160;&#160;&#160;500000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Periodo asociado a la frecuencia de sonido del buzzer de precacuion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00077">77</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+</div>
+</div>
+<a id="a04af45a437b91e28e16acbbca6918951" name="a04af45a437b91e28e16acbbca6918951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04af45a437b91e28e16acbbca6918951">&#9670;&#160;</a></span>CONFIG_PERIODO_BUZZER_PRECAUCION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIODO_BUZZER_PRECAUCION&#160;&#160;&#160;1000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Periodo asociado a la frecuencia de sonido del buzzer de precacuion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00073">73</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a72d356824e3c4922e02847cdb33aaa26" name="a72d356824e3c4922e02847cdb33aaa26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72d356824e3c4922e02847cdb33aaa26">&#9670;&#160;</a></span>CONFIG_PERIODO_MEDICION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIODO_MEDICION&#160;&#160;&#160;500000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Periodo asociado a la frecuencia de medicion de distancia. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00069">69</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a05d3eab6d2ee332b0d4d2851a6fe09b8" name="a05d3eab6d2ee332b0d4d2851a6fe09b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d3eab6d2ee332b0d4d2851a6fe09b8">&#9670;&#160;</a></span>alarmapeligro_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void alarmapeligro_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que enciende un buzzer para indicar un peligro. </p>
+<p>La tarea se encarga de encender el buzzer si la medicion de distancia es menor a 3 m. Se enciende por 500ms y se apaga. Si la medicion de distancia es mayor a 3m, se apaga. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00230">230</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8h_source.html#l00067">GPIO_15</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a> y <a class="el" href="examen_8c_source.html#l00089">valor_medicion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae51346c0a8a4eb0c9baaaed3655d3558" name="ae51346c0a8a4eb0c9baaaed3655d3558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51346c0a8a4eb0c9baaaed3655d3558">&#9670;&#160;</a></span>alarmaprecaucion_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void alarmaprecaucion_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que enciende un buzzer para indicar precaucion. </p>
+<p>La tarea se encarga de encender el buzzer si la medicion de distancia esta entre 3 y 5 metros. Se enciende por 1 y se apaga. En otro caso de medicion se apaga. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00258">258</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8h_source.html#l00067">GPIO_15</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a> y <a class="el" href="examen_8c_source.html#l00089">valor_medicion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00313">313</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen_8c_source.html#l00117">acelerometro_task_handle</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00038">ADC_SINGLE</a>, <a class="el" href="examen_8c_source.html#l00230">alarmapeligro_Task()</a>, <a class="el" href="examen_8c_source.html#l00258">alarmaprecaucion_Task()</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00120">AnalogOutputInit()</a>, <a class="el" href="examen_8c_source.html#l00113">buzzerpeligro_task_handle</a>, <a class="el" href="examen_8c_source.html#l00109">buzzerprecaucion_task_handle</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00032">CH1</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00034">CH3</a>, <a class="el" href="examen_8c_source.html#l00081">CONFIG_PERIODO_ACELEROMETRO</a>, <a class="el" href="examen_8c_source.html#l00073">CONFIG_PERIODO_BUZZER_PRECAUCION</a>, <a class="el" href="examen_8c_source.html#l00069">CONFIG_PERIODO_MEDICION</a>, <a class="el" href="examen_8c_source.html#l00128">FuncTimerA()</a>, <a class="el" href="examen_8c_source.html#l00142">FuncTimerB()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="examen_8c_source.html#l00287">medicion_caida_Task()</a>, <a class="el" href="examen_8c_source.html#l00208">mediciondistancia_Task()</a>, <a class="el" href="examen_8c_source.html#l00105">medir_task_handle</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="uart__mcu_8h_source.html#l00039">serial_config_t::port</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8h_source.html#l00033">TIMER_B</a>, <a class="el" href="timer__mcu_8h_source.html#l00034">TIMER_C</a>, <a class="el" href="timer__mcu_8c_source.html#l00067">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00116">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00033">UART_CONNECTOR</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="ae5fabf43ff16d8b11b1833a572594222" name="ae5fabf43ff16d8b11b1833a572594222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fabf43ff16d8b11b1833a572594222">&#9670;&#160;</a></span>Controlar_Leds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controlar_Leds </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controla los LEDs segun el valor de la medicion de distancia. </p>
+<p>Si la medicion de distancia es mayor a 5 metros, solo enciende el LED_1 esta encendido. Si es mayor a 3 metros y menor a 5 metros, los LEDs LED_1 y LED_2 estan encendidos. Si es menor a 3 metros, los tres LEDs estan encendidos. En cada caso, se muestra un mensaje en la UART indicando si debe tener precaucion "Precaución, vehículo cerca" o si esta en peligro "Peligro, vehículo cerca". </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00171">171</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="led_8h_source.html#l00034">LED_1</a>, <a class="el" href="led_8h_source.html#l00033">LED_2</a>, <a class="el" href="led_8h_source.html#l00032">LED_3</a>, <a class="el" href="led_8c_source.html#l00065">LedOff()</a>, <a class="el" href="led_8c_source.html#l00046">LedOn()</a>, <a class="el" href="uart__mcu_8h_source.html#l00033">UART_CONNECTOR</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="examen_8c_source.html#l00089">valor_medicion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00208">mediciondistancia_Task()</a>.</p>
+
+</div>
+</div>
+<a id="afaccfed84cd1498a05ea04a65f1209b1" name="afaccfed84cd1498a05ea04a65f1209b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaccfed84cd1498a05ea04a65f1209b1">&#9670;&#160;</a></span>FuncTimerA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerA </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función invocada en la interrupción del timer A. </p>
+<p>La función es invocada en la interrupción del timer B y envía una notificación a la tarea asociada a la medicion de distancia y al buzzer de peligro.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>No se utiliza </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00128">128</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen_8c_source.html#l00113">buzzerpeligro_task_handle</a> y <a class="el" href="examen_8c_source.html#l00105">medir_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a5088c3325764095ca222dc78c328f466" name="a5088c3325764095ca222dc78c328f466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5088c3325764095ca222dc78c328f466">&#9670;&#160;</a></span>FuncTimerB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerB </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función invocada en la interrupción del timer B. </p>
+<p>La función es invocada en la interrupción del timer B y envía una notificación a la tarea asociada al buzzer de precaución.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>No se utiliza </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00142">142</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen_8c_source.html#l00109">buzzerprecaucion_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a2d06a43d996ecce9ab84fa3a837fa597" name="a2d06a43d996ecce9ab84fa3a837fa597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d06a43d996ecce9ab84fa3a837fa597">&#9670;&#160;</a></span>FuncTimerC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerC </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función invocada en la interrupción del timer C. </p>
+<p>La función es invocada en la interrupción del timer C y envía una notificación a la tarea asociada a la medicion de la señal del acelerometro.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>No se utiliza </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00155">155</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen_8c_source.html#l00117">acelerometro_task_handle</a>.</p>
+
+</div>
+</div>
+<a id="a40ff1579458aaacda2d08449d0f21cc8" name="a40ff1579458aaacda2d08449d0f21cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ff1579458aaacda2d08449d0f21cc8">&#9670;&#160;</a></span>medicion_caida_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void medicion_caida_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que mide la aceleracion con el acelerometro y envia mensajes por bt. </p>
+<p>La tarea se encarga de medir la aceleracion con el acelerometro y enviar un mensaje por BT cuando la aceleracion es mayor a 4G. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00287">287</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00130">AnalogInputReadSingle()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00032">CH1</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00034">CH3</a>, <a class="el" href="examen_8c_source.html#l00093">signalACELEROMETRO_X</a>, <a class="el" href="examen_8c_source.html#l00097">signalACELEROMETRO_Y</a>, <a class="el" href="examen_8c_source.html#l00101">signalACELEROMETRO_Z</a>, <a class="el" href="uart__mcu_8h_source.html#l00033">UART_CONNECTOR</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="abd265f1f7c37adf2d1a9ba47a7d96e3a" name="abd265f1f7c37adf2d1a9ba47a7d96e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd265f1f7c37adf2d1a9ba47a7d96e3a">&#9670;&#160;</a></span>mediciondistancia_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mediciondistancia_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que mide la distancia con el sensor ultrasónico HC-SR04 y actualiza los LEDS. </p>
+<p>La tarea se encarga de medir la distancia con el sensor HC-SR04 y actualizar los LEDs segun el valor de la medicion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00208">208</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="examen_8c_source.html#l00171">Controlar_Leds()</a>, <a class="el" href="hc__sr04_8c_source.html#l00045">HcSr04ReadDistanceInCentimeters()</a> y <a class="el" href="examen_8c_source.html#l00089">valor_medicion</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a3466cd0e43837d57ca5c523cb468f0f2" name="a3466cd0e43837d57ca5c523cb468f0f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3466cd0e43837d57ca5c523cb468f0f2">&#9670;&#160;</a></span>acelerometro_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t acelerometro_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elemento de tipo TaskHandle para manejar la tarea de medir señal del acelerometro. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00117">117</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a> y <a class="el" href="examen_8c_source.html#l00155">FuncTimerC()</a>.</p>
+
+</div>
+</div>
+<a id="aac44253768bb2c4965e7105e02a80e50" name="aac44253768bb2c4965e7105e02a80e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac44253768bb2c4965e7105e02a80e50">&#9670;&#160;</a></span>buzzerpeligro_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t buzzerpeligro_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elemento de tipo TaskHandle para manejar la tarea de encender el buzzer de peligro. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00113">113</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a> y <a class="el" href="examen_8c_source.html#l00128">FuncTimerA()</a>.</p>
+
+</div>
+</div>
+<a id="a82725be8fd81729be466f3a7e04fee23" name="a82725be8fd81729be466f3a7e04fee23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82725be8fd81729be466f3a7e04fee23">&#9670;&#160;</a></span>buzzerprecaucion_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t buzzerprecaucion_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elemento de tipo TaskHandle para manejar la tarea de encender el buzzer de precaucion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00109">109</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a> y <a class="el" href="examen_8c_source.html#l00142">FuncTimerB()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0cb40d7a31ce7e8b3f906fd55df312" name="a2b0cb40d7a31ce7e8b3f906fd55df312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0cb40d7a31ce7e8b3f906fd55df312">&#9670;&#160;</a></span>medir_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t medir_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elemento de tipo TaskHandle para manejar la tarea de medir distancia. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00105">105</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00313">app_main()</a> y <a class="el" href="examen_8c_source.html#l00128">FuncTimerA()</a>.</p>
+
+</div>
+</div>
+<a id="a7c764197f446287cdb87dc768046d475" name="a7c764197f446287cdb87dc768046d475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c764197f446287cdb87dc768046d475">&#9670;&#160;</a></span>signalACELEROMETRO_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t signalACELEROMETRO_X =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable para almacenar los valores de la señal del acelerometro en X. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00093">93</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00287">medicion_caida_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a852453f831f697f4dbeee6954e132a66" name="a852453f831f697f4dbeee6954e132a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852453f831f697f4dbeee6954e132a66">&#9670;&#160;</a></span>signalACELEROMETRO_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t signalACELEROMETRO_Y =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable para almacenar los valores de la señal de acelerometro en Y. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00097">97</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00287">medicion_caida_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a2f8b4aa98ef0fd467e82831f670161c8" name="a2f8b4aa98ef0fd467e82831f670161c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8b4aa98ef0fd467e82831f670161c8">&#9670;&#160;</a></span>signalACELEROMETRO_Z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t signalACELEROMETRO_Z =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable para almacenar los valores de la señal del acelerometro en Z. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00101">101</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00287">medicion_caida_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a2a590c771f353f0f6890b6e3cfee2603" name="a2a590c771f353f0f6890b6e3cfee2603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a590c771f353f0f6890b6e3cfee2603">&#9670;&#160;</a></span>valor_medicion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor_medicion = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Variable para almacenar los valores de la señal de distancia. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="examen_8c_source.html#l00089">89</a> del archivo <a class="el" href="examen_8c_source.html">examen.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="examen_8c_source.html#l00230">alarmapeligro_Task()</a>, <a class="el" href="examen_8c_source.html#l00258">alarmaprecaucion_Task()</a>, <a class="el" href="examen_8c_source.html#l00171">Controlar_Leds()</a> y <a class="el" href="examen_8c_source.html#l00208">mediciondistancia_Task()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a class="el" href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a class="el" href="dir_268187ed9a71f0eda58f84b41654e92c.html">examen</a></li><li class="navelem"><a class="el" href="dir_a5361ca27c53f3c9a3e2f8fa9b1a66f2.html">main</a></li><li class="navelem"><a class="el" href="examen_8c.html">examen.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

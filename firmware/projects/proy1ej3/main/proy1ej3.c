@@ -47,11 +47,11 @@
 /*==================[internal data definition]===============================*/
  struct leds
 {
-    uint8_t mode;      // ON, OFF, TOGGLE
+    uint8_t mode;      // ON, OFF, TOGGLEe
 	uint8_t n_led;       // indica el número de led a controlar
 	uint8_t n_ciclos;   //indica la cantidad de ciclos de ncendido/apagado
 	uint16_t periodo;   // indica el tiempo de cada ciclo
-} my_leds; 
+} my_leds; //Estructura de 5 bytes contiguos en memoria, 3+2
 /*==================[internal functions declaration]=========================*/
 
 void control_leds(struct leds *my_leds) {
